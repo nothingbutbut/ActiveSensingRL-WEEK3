@@ -1,0 +1,22 @@
+numpy>=1.20.0
+numba>=0.52.0
+scipy>=1.2.3
+mujoco==2.3.0
+casadi==3.5.5
+matplotlib==3.3.3
+opencv-python==4.5.1.48
+pybullet==3.0.8
+qpsolvers
+tqdm==4.56.0
+quadprog
+pin
+pyyaml
+robosuite==1.4.0
+robomimic==0.3.0
+gym
+wandb
+h5py
+torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+hydra-core==1.1.0
+hydra-submitit-launcher==1.1.5
+omegaconf
