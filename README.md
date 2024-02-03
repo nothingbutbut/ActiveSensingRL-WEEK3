@@ -3,8 +3,6 @@
 
 BaseEnv类作为基类，新增的环境只需要提供xml file，重写step和reset的部分
 
-BaseEnv类作为基类，新增的环境只需要提供xml file，重写step和reset的部分
-
 自带renderer,允许添加不同视角的摄像机
 
 提供了三个wrapper类（DRQV2所需的）：
