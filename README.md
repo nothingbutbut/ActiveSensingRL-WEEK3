@@ -122,6 +122,25 @@ WARNING: Nan, Inf or huge value in QPOS at DOF 0. The simulation is unstable. Ti
 
 所有组的开门基本上都是滑铲完成的，这个问题自然与我们的Reward设置有关。
 
+### 第五轮实验：增加了站立奖励
+在奖励中增加了站立奖励，即2*head_z - right_foot_z - left_foot_z的变化量，即两倍头高度减去左脚和右脚位置和（在过去一个step的增加量），以一定比例(stand_weight)加入原有奖励，
+
+（同样进行了归一化，分母上的系数是4*stand_weight）
+
+在ratio=2的条件下，测试了stand_weight=0.5,1,2,100的四个情况，结果并不理想：
+
+<img src="images/第五轮测试.png" alt="GIF alt text" width="1000" height="400">
+
+开门姿势还是`滑铲`为主，除此之外还有大量的随机动作，但即使站立奖励最大的一组也没有学会站立
+
+#### exp1 ratio = 2 stand_weight = 0.5
+<img src="images/Vexp1.gif" alt="GIF alt text" width="384" height="384">
+
+#### exp1 ratio = 2 stand_weight = 100
+<img src="images/Vexp4.gif" alt="GIF alt text" width="384" height="384">
+
+直接加入站立奖励效果并不理想
+
 ## TODO
-1. 继续调整reward设置，一种可能是直接利用已经有的开门demo做模仿学习（但是数据量太小）
+1. 继续调整reward设置，一种可能是直接利用已经有的开门demo做模仿学习（但是数据量太小），或者参考humanoid的奖励继续增强环境的稳定性
 2. 其他……
